@@ -1,0 +1,53 @@
+#topHeader {
+  font-family: 'Rubik Dirt', cursive;
+  font-size: 30px;
+  text-align: center;
+  color: navy
+}
+#splashTitle {
+  font-family: 'Rubik Dirt', cursive; 
+  font-size: 2rem;
+  color: navy;
+}
+.splashContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 66vh;
+}
+
+.playButton {
+  background-color: crimson;
+  padding: .5em 1em;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: .2em;
+  color: bisque;
+}
+.battleshipPic{
+  position: absolute;
+  width: 50%;
+  left: 30vw;
+}
+
+.container {
+  display: flex
+}
+.gridPlayer {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: blue;
+  margin: 20px;
+}
+.gridEnemy {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: lightgreen;
+  margin: 20px;
+}
