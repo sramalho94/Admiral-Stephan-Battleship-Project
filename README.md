@@ -59,7 +59,7 @@ I will follow this roadmap in an attempt to make the development process and sim
      -C) checks to see if all there are any component panels remaining for the ship that was shot - if there are remaining cell components then the shot is a hit - if there are no remaining cell components then the ship is sunk
      D) checks to see if the player has any remaining ships
 
-### I believe I will start developing a single player version first and then see if there is any remaining time for a multiplayer version. Alternatively I'm also considering making my game just single player, but the player will get a choice between classic or salvo battleship
+#### I believe I will start developing a single player version first and then see if there is any remaining time for a multiplayer version. Alternatively I'm also considering making my game just single player, but the player will get a choice between classic or salvo battleship
 
 ---
 
