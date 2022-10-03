@@ -33,7 +33,8 @@
 }
 
 .container {
-  display: flex
+  display: flex;
+  margin: 10px;
 }
 .gridPlayer {
   width: 400px;
@@ -41,10 +42,9 @@
   display: grid;
   grid-template-columns: repeat(10, 10%);
   grid-template-rows: repeat(10,10%);
-  border: solid 1px;
   flex-wrap: wrap;
-  background-color: blue;
-  margin: 20px;
+  background-color: #006994;
+  margin-right: 10px;
 }
 .gridEnemy {
   width: 400px;
@@ -53,9 +53,8 @@
   grid-template-columns: repeat(10, 10%);
   grid-template-rows: repeat(10,10%);
   flex-wrap: wrap;
-  background-color: lightgreen;
-  margin: 20px;
+  background-color: #005EB8;
 }
 .cell, .cellEnemy {
-  border: solid 1px;
+  border: solid 0.5px;
 }
