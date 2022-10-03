@@ -49,8 +49,13 @@
 .gridEnemy {
   width: 400px;
   height: 400px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(10,10%);
   flex-wrap: wrap;
   background-color: lightgreen;
   margin: 20px;
+}
+.cell, .cellEnemy {
+  border: solid 1px;
 }
