@@ -73,3 +73,41 @@
   margin: 5px;
   flex-wrap: wrap;
 }
+.submarine-container{
+  width: 120px;
+  height: 40px;
+  background-color: gray;
+  display: flex;
+  margin: 5px;
+}
+.submarine-container-vertical{
+  height: 120px;
+  width: 40px;
+  background-color: gray;
+  display: flex;
+  margin: 5px;
+  flex-wrap: wrap;
+}
+.cruiser-container {
+  width: 120px;
+  height: 40px;
+  background-color: gray;
+  display: flex;
+  margin: 5px;
+}
+.cruiser-container-vertical {
+  height: 120px;
+  width: 40px;
+  background-color: gray;
+  display: flex;
+  margin: 5px;
+  flex-wrap: wrap;
+}
+.containerForShips {
+  width: 220px;
+  min-width: 220px;
+  height: 400px;
+  background-color: teal;
+  margin: 20px;
+  overflow-y: scroll;
+}
