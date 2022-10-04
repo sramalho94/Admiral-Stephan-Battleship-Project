@@ -1,6 +1,7 @@
 const gridPlayer = document.children[0].children[1].children[1].children[0]
 const gridEnemy = document.children[0].children[1].children[1].children[1]
-
+const ships = document.querySelectorAll('.ship')
+const placeShipButton = document.getElementById('placeShips')
 const setPlayerBoard = () => {
   for (let i = 0; i < 100; i++) {
     const cell = document.createElement('div')
@@ -63,3 +64,16 @@ const setEnemyBoard = () => {
 }
 setPlayerBoard()
 setEnemyBoard()
+
+const listenForClick = () => {
+  const cells = document.querySelectorAll('.cell')
+  for (let i = 0; i < cells.length; i++) {
+    cells[i].addEventListener('click', function () {
+      console.log('clicked')
+    })
+  }
+}
+
+const setPlayerShips = () => {
+  alert('Place your ship')
+}
