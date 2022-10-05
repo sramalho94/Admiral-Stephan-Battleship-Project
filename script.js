@@ -24,6 +24,13 @@ const setPlayerBoard = () => {
           // priority - low
           cell.classList.add('class', 'ship')
           //create limit for 5 ships
+          pickedCell.push(cell)
+          console.log(pickedCell)
+          if (pickedCell.length >= 5) {
+            stage !== 'setup'
+          }
+        } else if (stage !== 'setup') {
+          console.log('start battle')
         }
       })
 
