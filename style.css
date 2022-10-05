@@ -44,6 +44,7 @@
   grid-template-rows: repeat(10,10%);
   flex-wrap: wrap;
   background-color: #006994;
+  border: 1px solid black;
   margin-right: 10px;
 }
 .gridEnemy {
@@ -56,9 +57,18 @@
   background-color: #005EB8;
 }
 .cell, .cellEnemy {
-  border: solid 0.5px;
+  /* border: solid 0.5px; */
+  border: 1px solid black;
 }
-
+.enemyShip {
+  background-color: pink;
+}
 .ship {
   background-color: gray;
+}
+.shot {
+  background-color: red;
+}
+.miss {
+  background-color: black;
 }
