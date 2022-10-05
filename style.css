@@ -68,7 +68,9 @@
 }
 .shot {
   background-color: red;
+  pointer-events: none;
 }
 .miss {
   background-color: black;
+  pointer-events: none;
 }
