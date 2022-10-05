@@ -22,15 +22,11 @@ const setPlayerBoard = () => {
         if (stage === 'setup') {
           // todo -> create ships
           // priority - low
+          // while (pickedCell.length <= 5) {
           cell.classList.add('class', 'ship')
-          //create limit for 5 ships
-          pickedCell.push(cell)
-          console.log(pickedCell)
-          if (pickedCell.length >= 5) {
-            stage !== 'setup'
-          }
-        } else if (stage !== 'setup') {
-          console.log('start battle')
+          //   //create limit for 5 ships
+          //   pickedCell.push(cell)
+          // }
         }
       })
 
@@ -95,8 +91,7 @@ const setEnemyBoard = () => {
   }
   // pick Ships for Enemy
 }
-
-computerTurns = []
+let computerTurns = []
 const computerTurn = () => {
   // pick a random number
   // pick a random number that has not been pciked before
@@ -105,6 +100,20 @@ const computerTurn = () => {
   // if ship -> change class
   //    -> check if game over
   // if not ship -> change class
+  let x
+  x = Math.floor(Math.random() * 100)
+  if (!computerTurns.includes(x)) {
+    const playerCell = document.getElementsByClassName('player')[x]
+    console.log(playerCell)
+    computerTurns += [x]
+    console.log(computerTurns)
+    if (playerCell.classList.contains('ship')) {
+      playerCell.classList.add('class', 'shot')
+      playerCell.classList.remove('ship')
+    } else {
+      playerCell.classList.add('class', 'miss')
+    }
+  }
 }
 setPlayerBoard()
 setEnemyBoard()
