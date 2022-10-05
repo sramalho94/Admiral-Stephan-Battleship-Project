@@ -102,23 +102,6 @@ const computerTurn = () => {
 setPlayerBoard()
 setEnemyBoard()
 
-// const cells = document.querySelectorAll('.cell')
-// const pickShip = (e) => {
-//   e.target.setAttribute('class', 'ship')
-//   pickedCell.push(e.target)
-//   if (pickedCell.length > 4) {
-//     for (let i = 0; i < cells.length; i++) {
-//       cells[i].removeEventListener('click', pickShip)
-//     }
-//   }
-// }
-// const setPlayerShips = () => {
-//   for (let i = 0; i < cells.length; i++) {
-//     cells[i].addEventListener('click', pickShip, { once: true })
-//   }
-// }
-// placeShipButton.addEventListener('click', setPlayerShips)
-
 document.getElementById('startBattle').addEventListener('click', () => {
   stage = 'play'
 })
