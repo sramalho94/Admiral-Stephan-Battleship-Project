@@ -6,7 +6,9 @@ const placeShipButton = document.getElementById('placeShips')
 const boatInstructions = document.getElementsByClassName('boatInstructions')
 
 let stage = 'setup' // play, over
-
+let shipCount = 5
+let playerHealth = 5
+let enemyHealth = 5
 const setPlayerBoard = () => {
   pickedCell = []
   for (let i = 0; i < 10; i++) {
@@ -22,8 +24,10 @@ const setPlayerBoard = () => {
         if (stage === 'setup') {
           // todo -> create ships
           // priority - low
-          // while (pickedCell.length <= 5) {
-          cell.classList.add('class', 'ship')
+          if (shipCount > 0) {
+            cell.classList.add('class', 'ship')
+            shipCount -= 1
+          }
           //   //create limit for 5 ships
           //   pickedCell.push(cell)
           // }
