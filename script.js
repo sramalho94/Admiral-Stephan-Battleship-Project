@@ -57,7 +57,10 @@ const setEnemyBoard = () => {
             console.log(cell.classList)
             cell.classList.add('class', 'shot')
             cell.classList.remove('ship')
-
+            enemyHealth -= 1
+            if (enemyHealth == 0) {
+              stage = 'over'
+            }
             // todo: check if game is over
 
             // if not ship
