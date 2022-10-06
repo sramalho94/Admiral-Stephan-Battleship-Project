@@ -54,13 +54,13 @@ const setEnemyBoard = () => {
           // check if area is a ship or not
           if (cell.classList.contains('enemyShip')) {
             // if ship
-            console.log(cell.classList)
             cell.classList.add('class', 'shot')
             cell.classList.remove('ship')
             enemyHealth -= 1
             if (enemyHealth == 0) {
               stage = 'over'
             }
+            console.log('banana', enemyHealth)
             // todo: check if game is over
 
             // if not ship
@@ -91,7 +91,6 @@ const setEnemyBoard = () => {
         const enemyShipCell = enemyShipCells[y]
         enemyShipCell.classList.add('class', 'enemyShip')
         enemyShips += [y]
-        console.log(enemyShips)
         didNotAddShip = !didNotAddShip
       }
     }
