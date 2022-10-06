@@ -59,6 +59,7 @@ const setEnemyBoard = () => {
             enemyHealth -= 1
             if (enemyHealth == 0) {
               stage = 'over'
+              alert('Admiral, the fleet reports victory! Refresh to replay')
             }
             console.log('banana', enemyHealth)
             // todo: check if game is over
@@ -70,6 +71,11 @@ const setEnemyBoard = () => {
 
           // computer makes a turn
           computerTurn()
+          console.log(playerHealth)
+          if (playerHealth == 0) {
+            stage = 'over'
+            alert('Admiral, our fleet is destoryed! Refresh page to replay')
+          }
         }
       })
       gridEnemy.append(cell)
@@ -99,13 +105,6 @@ const setEnemyBoard = () => {
 }
 let computerTurns = []
 const computerTurn = () => {
-  // pick a random number
-  // pick a random number that has not been pciked before
-  // get the cell
-  // check if it is a ship or not
-  // if ship -> change class
-  //    -> check if game over
-  // if not ship -> change class
   let x
   x = Math.floor(Math.random() * 100)
   if (!computerTurns.includes(x)) {
@@ -113,14 +112,18 @@ const computerTurn = () => {
     console.log(playerCell)
     computerTurns += [x]
     console.log(computerTurns)
+    console.log('AI shot')
+    console.log([x])
     if (playerCell.classList.contains('ship')) {
       playerCell.classList.add('class', 'shot')
       playerCell.classList.remove('ship')
+      playerHealth -= 1
     } else {
       playerCell.classList.add('class', 'miss')
     }
   }
 }
+
 setPlayerBoard()
 setEnemyBoard()
 

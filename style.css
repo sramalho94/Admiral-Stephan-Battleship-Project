@@ -65,6 +65,7 @@
 }
 .ship {
   background-color: gray;
+  pointer-events: none;
 }
 .shot {
   background-color: red;
