@@ -21,7 +21,7 @@ const setPlayerBoard = () => {
 
       cell.addEventListener('click', () => {
         if (stage === 'setup') {
-          // post mvp-todo -> create ships
+          // post mvp-todo -> create ships off diff length
           if (shipCount > 0) {
             cell.classList.add('class', 'ship')
             shipCount -= 1
@@ -51,6 +51,7 @@ const setEnemyBoard = () => {
             cell.classList.add('class', 'shot')
             cell.classList.remove('ship')
             enemyHealth -= 1
+            // checking for end game condition after hit
             if (enemyHealth == 0) {
               stage = 'over'
               alert('Admiral, the fleet reports victory! Refresh to replay')
@@ -62,6 +63,7 @@ const setEnemyBoard = () => {
 
           // computer makes a turn
           computerTurn()
+          // checking for end game condition
           if (playerHealth == 0) {
             stage = 'over'
             alert('Admiral, our fleet is destoryed! Refresh page to replay')
@@ -92,10 +94,10 @@ const setEnemyBoard = () => {
 let computerTurns = []
 const computerTurn = () => {
   let x
-  // did not pick a previously picked tile
   while (true) {
     x = Math.floor(Math.random() * 100)
     console.log(x)
+    // did not pick a previously picked tile
     if (!computerTurns.includes(x)) {
       const playerCell = document.getElementsByClassName('player')[x]
       computerTurns.push(x)
@@ -108,6 +110,7 @@ const computerTurn = () => {
         playerCell.classList.add('class', 'miss')
       }
       break
+      // break out of loop
     }
   }
 }
