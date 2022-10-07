@@ -6,6 +6,8 @@
 
 ---
 
+![picture](https://i.ytimg.com/an/nCqDdsZY7RA/13955749347178297462_mq.jpg?v=5f49aa10)
+
 # Links
 
 ##Trello Link
