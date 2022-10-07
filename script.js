@@ -1,5 +1,4 @@
 const gridPlayer = document.children[0].children[1].children[1].children[0]
-// const gridPlayer = document.querySelector.getElementById('gridPlayer')
 const gridEnemy = document.children[0].children[1].children[1].children[1]
 const ships = document.querySelectorAll('.ship')
 const placeShipButton = document.getElementById('placeShips')
@@ -9,6 +8,9 @@ let stage = 'setup' // play, over
 let shipCount = 5
 let playerHealth = 5
 let enemyHealth = 5
+
+// creating cells with a nested for loop, i sets rows, j sets columns
+// implementation was found thanks to http://learningprocessing.com/exercises/chp06/exercise-06-08-grid-nested-loop
 const setPlayerBoard = () => {
   pickedCell = []
   for (let i = 0; i < 10; i++) {
@@ -20,17 +22,12 @@ const setPlayerBoard = () => {
       cell.classList.add(`col${j}`)
 
       cell.addEventListener('click', () => {
-        console.log(stage)
         if (stage === 'setup') {
-          // todo -> create ships
-          // priority - low
+          // post mvp-todo -> create ships
           if (shipCount > 0) {
             cell.classList.add('class', 'ship')
             shipCount -= 1
           }
-          //   //create limit for 5 ships
-          //   pickedCell.push(cell)
-          // }
         }
       })
 
@@ -47,10 +44,10 @@ const setEnemyBoard = () => {
       cell.classList.add(`row${i}`)
       cell.classList.add(`col${j}`)
 
+      // event listener
       cell.addEventListener('click', () => {
         if (stage === 'play') {
-          // check that the cell that was clicked hasnt been clicked before
-
+          boatInstructions.hidden = true
           // check if area is a ship or not
           if (cell.classList.contains('enemyShip')) {
             // if ship
@@ -62,8 +59,6 @@ const setEnemyBoard = () => {
               alert('Admiral, the fleet reports victory! Refresh to replay')
             }
             console.log('banana', enemyHealth)
-            // todo: check if game is over
-
             // if not ship
           } else {
             cell.classList.add('class', 'miss')
@@ -71,7 +66,6 @@ const setEnemyBoard = () => {
 
           // computer makes a turn
           computerTurn()
-          console.log(playerHealth)
           if (playerHealth == 0) {
             stage = 'over'
             alert('Admiral, our fleet is destoryed! Refresh page to replay')
@@ -81,22 +75,20 @@ const setEnemyBoard = () => {
       gridEnemy.append(cell)
     }
   }
-  console.log(gridEnemy)
   // setup enemy board
   let enemyShips = []
+  // for loop set to 5 to create 5 ships
   for (let i = 0; i < 5; i++) {
     let y
     let didNotAddShip = true
     while (didNotAddShip) {
       y = Math.floor(Math.random() * 100)
-
       if (!enemyShips.includes(y)) {
-        // const enemyShipCell = document.getElementsByClassName('enemy')[y]
-
         const enemyShipCells = document.getElementsByClassName('enemy')
         const enemyShipCell = enemyShipCells[y]
         enemyShipCell.classList.add('class', 'enemyShip')
-        enemyShips += [y]
+        enemyShips.push(y)
+        console.log('apple', enemyShips)
         didNotAddShip = !didNotAddShip
       }
     }
@@ -107,13 +99,11 @@ let computerTurns = []
 const computerTurn = () => {
   let x
   x = Math.floor(Math.random() * 100)
+  console.log(x)
   if (!computerTurns.includes(x)) {
     const playerCell = document.getElementsByClassName('player')[x]
-    console.log(playerCell)
-    computerTurns += [x]
+    computerTurns.push(x)
     console.log(computerTurns)
-    console.log('AI shot')
-    console.log([x])
     if (playerCell.classList.contains('ship')) {
       playerCell.classList.add('class', 'shot')
       playerCell.classList.remove('ship')
