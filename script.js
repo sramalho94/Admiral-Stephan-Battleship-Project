@@ -1,5 +1,5 @@
-const gridPlayer = document.children[0].children[1].children[1].children[0]
-const gridEnemy = document.children[0].children[1].children[1].children[1]
+const gridPlayer = document.getElementById('gridPlayer')
+const gridEnemy = document.getElementById('gridEnemy')
 const ships = document.querySelectorAll('.ship')
 const placeShipButton = document.getElementById('placeShips')
 const boatInstructions = document.getElementsByClassName('boatInstructions')
@@ -10,7 +10,6 @@ let playerHealth = 5
 let enemyHealth = 5
 
 // creating cells with a nested for loop, i sets rows, j sets columns
-// implementation was found thanks to http://learningprocessing.com/exercises/chp06/exercise-06-08-grid-nested-loop
 const setPlayerBoard = () => {
   pickedCell = []
   for (let i = 0; i < 10; i++) {
