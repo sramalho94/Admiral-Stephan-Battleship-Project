@@ -10,7 +10,8 @@
 
 # Links
 
-##Trello Link
+## Trello Link
+
 [My Project Board](https://trello.com/invite/b/vswxJVqA/822b952ad7178d32ae04d5455cffe6fb/battleship-project)
 
 ## GitHub Repository
