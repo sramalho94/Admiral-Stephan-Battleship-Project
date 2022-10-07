@@ -96,12 +96,10 @@ const computerTurn = () => {
   let x
   while (true) {
     x = Math.floor(Math.random() * 100)
-    console.log(x)
     // did not pick a previously picked tile
     if (!computerTurns.includes(x)) {
       const playerCell = document.getElementsByClassName('player')[x]
       computerTurns.push(x)
-      console.log(computerTurns)
       if (playerCell.classList.contains('ship')) {
         playerCell.classList.add('class', 'shot')
         playerCell.classList.remove('ship')
