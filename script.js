@@ -4,7 +4,7 @@ const ships = document.querySelectorAll('.ship')
 const placeShipButton = document.getElementById('placeShips')
 const boatInstructions = document.getElementsByClassName('boatInstructions')
 
-let stage = 'setup' // play, over
+let stage = 'setup' // game will be either setup, play, or over
 let shipCount = 5
 let playerHealth = 5
 let enemyHealth = 5
@@ -45,7 +45,6 @@ const setEnemyBoard = () => {
       // event listener
       cell.addEventListener('click', () => {
         if (stage === 'play') {
-          boatInstructions.hidden = true
           // check if area is a ship or not
           if (cell.classList.contains('enemyShip')) {
             // if ship
@@ -89,7 +88,6 @@ const setEnemyBoard = () => {
       }
     }
   }
-  // pick Ships for Enemy
 }
 let computerTurns = []
 const computerTurn = () => {
@@ -100,7 +98,6 @@ const computerTurn = () => {
     console.log(x)
     if (!computerTurns.includes(x)) {
       const playerCell = document.getElementsByClassName('player')[x]
-
       computerTurns.push(x)
       console.log(computerTurns)
       if (playerCell.classList.contains('ship')) {
