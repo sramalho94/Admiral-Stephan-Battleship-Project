@@ -8,7 +8,6 @@ let stage = 'setup' // play, over
 let shipCount = 5
 let playerHealth = 5
 let enemyHealth = 5
-
 // creating cells with a nested for loop, i sets rows, j sets columns
 const setPlayerBoard = () => {
   pickedCell = []
@@ -57,7 +56,6 @@ const setEnemyBoard = () => {
               stage = 'over'
               alert('Admiral, the fleet reports victory! Refresh to replay')
             }
-            console.log('banana', enemyHealth)
             // if not ship
           } else {
             cell.classList.add('class', 'miss')
@@ -74,7 +72,7 @@ const setEnemyBoard = () => {
       gridEnemy.append(cell)
     }
   }
-  // setup enemy board
+  // setup enemy ships
   let enemyShips = []
   // for loop set to 5 to create 5 ships
   for (let i = 0; i < 5; i++) {
@@ -87,7 +85,6 @@ const setEnemyBoard = () => {
         const enemyShipCell = enemyShipCells[y]
         enemyShipCell.classList.add('class', 'enemyShip')
         enemyShips.push(y)
-        console.log('apple', enemyShips)
         didNotAddShip = !didNotAddShip
       }
     }
@@ -97,18 +94,23 @@ const setEnemyBoard = () => {
 let computerTurns = []
 const computerTurn = () => {
   let x
-  x = Math.floor(Math.random() * 100)
-  console.log(x)
-  if (!computerTurns.includes(x)) {
-    const playerCell = document.getElementsByClassName('player')[x]
-    computerTurns.push(x)
-    console.log(computerTurns)
-    if (playerCell.classList.contains('ship')) {
-      playerCell.classList.add('class', 'shot')
-      playerCell.classList.remove('ship')
-      playerHealth -= 1
-    } else {
-      playerCell.classList.add('class', 'miss')
+  // did not pick a previously picked tile
+  while (true) {
+    x = Math.floor(Math.random() * 100)
+    console.log(x)
+    if (!computerTurns.includes(x)) {
+      const playerCell = document.getElementsByClassName('player')[x]
+
+      computerTurns.push(x)
+      console.log(computerTurns)
+      if (playerCell.classList.contains('ship')) {
+        playerCell.classList.add('class', 'shot')
+        playerCell.classList.remove('ship')
+        playerHealth -= 1
+      } else {
+        playerCell.classList.add('class', 'miss')
+      }
+      break
     }
   }
 }
