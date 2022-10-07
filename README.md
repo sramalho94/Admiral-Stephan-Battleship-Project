@@ -91,8 +91,9 @@ The languages I used were HTML, CSS, and JavaScript
   - Using randomly generated numbers in index notation to randomly select elements in a node list. Inspiration for this was taken from a user comment on https://www.w3resource.com/javascript-exercises/javascript-array-exercise-35.php
     - employed on L83-84 and L100. Alternate ways of selecting a random element in a nodelist. L100 is a more efficient way of doing this, as it requires fewer steps. L83-84 is essentially a fully written out version of what is happening on L100.
   - Different ways of initializing and breaking out of While loops
-    - The while loop initiated on on L80 is dependant on the boolean declared on L79. Setting the boolean to false on L87 breaks out of the loop.
-    - An alternate technique was employed on L96. Instead of setting a boolean in the line before it, the while condition is simply true. To break out of the loop, L110 is used. It is placed after the if statements to account for the possibilites laid out in the If statements.
+    - The while loop initiated on on L80 is dependant on the boolean declared on L79. Setting the boolean to false on L87 breaks out of the loop.The inspiration for this came from a question posted on https://www.codecademy.com/forum_questions/526ed0ebf10c60043500057b
+    - An alternate technique was employed on L96. Instead of setting a boolean in the line before it, the while condition is simply true. To break out of the loop, L110 is used. It is placed after the if statements to account for the possibilites laid out in the If statements. The inspiration for the methodology came from a question on stackoverlow on
+      https://www.w3resource.com/javascript-exercises/javascript-array-exercise-35.php
 
 ---
 
